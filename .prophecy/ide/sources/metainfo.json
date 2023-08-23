@@ -7,8 +7,8 @@
     "path" : "",
     "editable" : true
   },
-  "providerType" : "databricks",
-  "fabricId" : "2623",
+  "providerType" : "snowflake",
+  "fabricId" : "4315",
   "prophecyIDEFolder" : {
     "name" : "",
     "children" : { },
@@ -19,76 +19,80 @@
     "type" : "Project",
     "name" : "",
     "children" : [ {
-      "type" : "Catalog",
-      "name" : "apollo11",
+      "type" : "Database",
+      "name" : "ANALYTICS",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "dais2023",
+      "type" : "Database",
+      "name" : "COVID19_EPIDEMIOLOGICAL_DATA",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "dais_gen_ai",
+      "type" : "Database",
+      "name" : "DEVENVDEMOS",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "data_engg",
+      "type" : "Database",
+      "name" : "DEV_RETAIL",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "fsidemos",
+      "type" : "Database",
+      "name" : "JSR",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "gen_ai",
+      "type" : "Database",
+      "name" : "KNOEMA_ECONOMY_DATA_ATLAS",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "hive_metastore",
+      "type" : "Database",
+      "name" : "MACIEJ_DQ",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "lineage_data",
+      "type" : "Database",
+      "name" : "MEITEST",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "main",
+      "type" : "Database",
+      "name" : "NTONG",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "ntong",
-      "children" : [ {
-        "type" : "Schema",
-        "name" : "default",
-        "children" : [ ]
-      }, {
-        "type" : "Schema",
-        "name" : "information_schema",
-        "children" : [ ]
-      } ]
-    }, {
-      "type" : "Catalog",
-      "name" : "ntong2",
+      "type" : "Database",
+      "name" : "PC_DBT_DB",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "ntong_dais",
+      "type" : "Database",
+      "name" : "PROD_RETAIL",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "prophecy_data",
+      "type" : "Database",
+      "name" : "PROPHECYQ",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "rj",
+      "type" : "Database",
+      "name" : "RAW",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "samples",
+      "type" : "Database",
+      "name" : "RETAIL",
       "children" : [ ]
     }, {
-      "type" : "Catalog",
-      "name" : "system",
+      "type" : "Database",
+      "name" : "SAMPLE_DATA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SF_TUTS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SNOWFLAKE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "STG_RETAIL",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "TESTDB",
       "children" : [ ]
     } ]
   },
