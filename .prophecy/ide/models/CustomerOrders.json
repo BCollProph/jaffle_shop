@@ -19,8 +19,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "CustomerOrders",
-        "x" : 420,
-        "y" : -20,
+        "x" : 1120,
+        "y" : 240,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -28,7 +28,7 @@
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM Filter_1\n",
+        "query" : "SELECT * \n\nFROM Filter_on_Status\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -76,7 +76,7 @@
               }
             } ]
           },
-          "slug" : "Filter_1"
+          "slug" : "Filter_on_Status"
         } ],
         "outputs" : [ {
           "id" : "WJYioo9R",
@@ -128,10 +128,10 @@
       "id" : "slsXoyMVnU6_qU9VlL45r$$BYZPhLa3diBF20vhWVc8t",
       "component" : "Join",
       "metadata" : {
-        "label" : "Join_1",
-        "slug" : "Join_1",
-        "x" : -220,
-        "y" : 40,
+        "label" : "JoinOnIDs",
+        "slug" : "JoinOnIDs",
+        "x" : 320,
+        "y" : 340,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -411,8 +411,8 @@
       "metadata" : {
         "label" : "Aggregate_1",
         "slug" : "Aggregate_1",
-        "x" : -80,
-        "y" : 60,
+        "x" : 520,
+        "y" : 340,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -589,10 +589,10 @@
       "id" : "ivjvgw2Dlzxv4rTu79gcI$$X5o4ZSGhKHZNh0yPwHrMb",
       "component" : "SQLStatement",
       "metadata" : {
-        "label" : "SQLStatement_1",
-        "slug" : "SQLStatement_1",
-        "x" : -120,
-        "y" : -180,
+        "label" : "SubQueryCount",
+        "slug" : "SubQueryCount",
+        "x" : 520,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -683,10 +683,10 @@
       "id" : "Rlq3k-WUHJH8KGfMEKj9U$$8ZwC9QRFlFv5wiYV_UQLU",
       "component" : "Join",
       "metadata" : {
-        "label" : "Join_2",
-        "slug" : "Join_2",
-        "x" : 100,
-        "y" : -20,
+        "label" : "AddCount",
+        "slug" : "AddCount",
+        "x" : 720,
+        "y" : 240,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -846,8 +846,8 @@
       "metadata" : {
         "label" : "orders",
         "slug" : "orders",
-        "x" : -360,
-        "y" : -100,
+        "x" : 120,
+        "y" : 140,
         "phase" : 0
       },
       "properties" : {
@@ -919,10 +919,10 @@
       "id" : "Lsko_CyMlJsX7Brnq7Q3P$$VuY6tQh58IjPmakggVGqC",
       "component" : "Filter",
       "metadata" : {
-        "label" : "Filter_1",
-        "slug" : "Filter_1",
-        "x" : 240,
-        "y" : -20,
+        "label" : "Filter_on_Status",
+        "slug" : "Filter_on_Status",
+        "x" : 920,
+        "y" : 240,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1028,8 +1028,8 @@
       "metadata" : {
         "label" : "customers",
         "slug" : "customers",
-        "x" : -360,
-        "y" : 140,
+        "x" : 120,
+        "y" : 340,
         "phase" : 0
       },
       "properties" : {

@@ -14,7 +14,7 @@ customers AS (
 
 ),
 
-SQLStatement_1 AS (
+SubQueryCount AS (
 
   SELECT 
     customer_id,
@@ -30,7 +30,7 @@ SQLStatement_1 AS (
 
 ),
 
-Join_1 AS (
+JoinOnIDs AS (
 
   SELECT 
     customers_1.FIRST_NAME AS FIRST_NAME,
@@ -65,13 +65,13 @@ Aggregate_1 AS (
     any_value(CUSTOMER_LIFETIME_VALUE) AS CUSTOMER_LIFETIME_VALUE,
     any_value(CUSTOMER_ID) AS CUSTOMER_ID
   
-  FROM Join_1 AS in0
+  FROM JoinOnIDs AS in0
   
   GROUP BY CUSTOMER_ID
 
 ),
 
-Join_2 AS (
+AddCount AS (
 
   SELECT 
     in0.CUSTOMER_ID AS CUSTOMER_ID,
@@ -82,17 +82,17 @@ Join_2 AS (
     in1.CUSTOMER_LIFETIME_VALUE AS CUSTOMER_LIFETIME_VALUE,
     in1.TOTAL_PURCHASE_HISTORY AS TOTAL_PURCHASE_HISTORY
   
-  FROM SQLStatement_1 AS in0
+  FROM SubQueryCount AS in0
   INNER JOIN Aggregate_1 AS in1
      ON in0.CUSTOMER_ID = in1.CUSTOMER_ID
 
 ),
 
-Filter_1 AS (
+Filter_on_Status AS (
 
   SELECT * 
   
-  FROM Join_2 AS in0
+  FROM AddCount AS in0
   
   WHERE STATUS = 'completed'
 
@@ -100,4 +100,4 @@ Filter_1 AS (
 
 SELECT *
 
-FROM Filter_1
+FROM Filter_on_Status
