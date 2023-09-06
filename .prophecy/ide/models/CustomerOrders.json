@@ -19,8 +19,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "CustomerOrders",
-        "x" : 1120,
-        "y" : 240,
+        "x" : 1060,
+        "y" : 200,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -131,7 +131,7 @@
         "label" : "JoinOnIDs",
         "slug" : "JoinOnIDs",
         "x" : 320,
-        "y" : 340,
+        "y" : 320,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -411,8 +411,8 @@
       "metadata" : {
         "label" : "Aggregate_1",
         "slug" : "Aggregate_1",
-        "x" : 520,
-        "y" : 340,
+        "x" : 480,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -591,7 +591,7 @@
       "metadata" : {
         "label" : "SubQueryCount",
         "slug" : "SubQueryCount",
-        "x" : 440,
+        "x" : 320,
         "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
@@ -685,8 +685,8 @@
       "metadata" : {
         "label" : "AddCount",
         "slug" : "AddCount",
-        "x" : 720,
-        "y" : 240,
+        "x" : 700,
+        "y" : 200,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -847,7 +847,7 @@
         "label" : "orders",
         "slug" : "orders",
         "x" : 120,
-        "y" : 140,
+        "y" : 80,
         "phase" : 0
       },
       "properties" : {
@@ -921,8 +921,8 @@
       "metadata" : {
         "label" : "Filter_on_Status",
         "slug" : "Filter_on_Status",
-        "x" : 920,
-        "y" : 240,
+        "x" : 900,
+        "y" : 200,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1029,7 +1029,7 @@
         "label" : "customers",
         "slug" : "customers",
         "x" : 120,
-        "y" : 340,
+        "y" : 360,
         "phase" : 0
       },
       "properties" : {
