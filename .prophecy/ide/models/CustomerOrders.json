@@ -121,7 +121,8 @@
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     },
     "slsXoyMVnU6_qU9VlL45r$$BYZPhLa3diBF20vhWVc8t" : {
@@ -402,7 +403,8 @@
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     },
     "q1GxH12K2PFGMSK1CMaHC$$nesEjTgfTt34nFl8Z6qOx" : {
@@ -582,7 +584,8 @@
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     },
     "ivjvgw2Dlzxv4rTu79gcI$$X5o4ZSGhKHZNh0yPwHrMb" : {
@@ -676,7 +679,8 @@
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     },
     "Rlq3k-WUHJH8KGfMEKj9U$$8ZwC9QRFlFv5wiYV_UQLU" : {
@@ -837,7 +841,8 @@
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     },
     "34VYH4bPDIBf_69TilZp-" : {
@@ -912,7 +917,8 @@
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     },
     "Lsko_CyMlJsX7Brnq7Q3P$$VuY6tQh58IjPmakggVGqC" : {
@@ -1019,7 +1025,8 @@
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     },
     "I4k1J9S0PO8RD_TlqAADE" : {
@@ -1084,7 +1091,8 @@
           },
           "slug" : "out"
         } ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       }
     }
   },
