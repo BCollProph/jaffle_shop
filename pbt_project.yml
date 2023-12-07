@@ -13,12 +13,14 @@ gemContainer:
   languageVersion: ''
   gemLibsVersion: ''
   gems: {}
+  dependencies: null
 functions:
   author: null
   createdAt: '2023-04-12 15:34:56'
   udfs: {}
   udafs: {}
   expressions: {}
+  airflowFunctions: {}
 subgraphs: {}
 sqlModels:
   .prophecy/metadata/sqlmodels/stg_orders:
@@ -126,6 +128,32 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-04-12 15:35:01'
+  .prophecy/metadata/sqlmodels/TestBR:
+    name: TestBR
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: FIRST_NAME
+        dataType:
+          type: String
+      - name: LAST_NAME
+        dataType:
+          type: String
+      - name: ORDER_DATE
+        dataType:
+          type: Date
+      - name: STATUS
+        dataType:
+          type: String
+    description: null
+    author: brendan@prophecy.io
+    files:
+    - models/TestBR.sql
+    - .prophecy/ide/models/TestBR.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-11-02 17:41:59'
   .prophecy/metadata/sqlmodels/customers:
     name: customers
     schema:
@@ -152,8 +180,15 @@ sqlModels:
       - name: CUSTOMER_LIFETIME_VALUE
         dataType:
           type: Number
-    description: This table has basic information about a customer, as well as some
-      derived facts based on a customer's orders
+    description: This pipeline graph provides a comprehensive report on customer behavior,
+      including order history, payment patterns, and customer lifetime value (CLV).
+      By combining data from multiple sources, including orders, payments, and customer
+      information, businesses can gain a holistic view of customer behavior and make
+      data-driven decisions related to customer retention, targeted marketing strategies,
+      and overall business growth. The report includes customer details such as name,
+      first and most recent order dates, total number of orders, and customer lifetime
+      value, and can be sorted by any of these metrics to provide insights into customer
+      behavior and performance.
     author: maciej@prophecy.io
     files:
     - models/customers.sql
@@ -190,6 +225,53 @@ sqlModels:
       models: []
       datasets: []
     createdAt: '2023-04-12 15:35:01'
+  .prophecy/metadata/sqlmodels/TestK:
+    name: TestK
+    schema:
+      providerType: Snowflake
+      fields:
+      - name: ORDER_ID
+        dataType:
+          type: Number
+      - name: CUSTOMER_ID
+        dataType:
+          type: Number
+      - name: ORDER_DATE
+        dataType:
+          type: Date
+      - name: STATUS
+        dataType:
+          type: String
+      - name: CREDIT_CARD_AMOUNT
+        dataType:
+          type: Number
+      - name: COUPON_AMOUNT
+        dataType:
+          type: Number
+      - name: BANK_TRANSFER_AMOUNT
+        dataType:
+          type: Number
+      - name: GIFT_CARD_AMOUNT
+        dataType:
+          type: Number
+      - name: AMOUNT
+        dataType:
+          type: Number
+      - name: ID
+        dataType:
+          type: Number
+      - name: USER_ID
+        dataType:
+          type: Number
+    description: null
+    author: brendan@prophecy.io
+    files:
+    - models/staging/TestK.sql
+    - .prophecy/ide/models/TestK.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-11-02 17:41:59'
   .prophecy/metadata/sqlmodels/stg_customers:
     name: stg_customers
     schema:
@@ -279,7 +361,175 @@ sqlSeeds:
     files:
     - seeds/raw_payments.csv
     createdAt: '2023-04-12 15:35:01'
-sqlSources: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/RAW_JAFFLE_SHOP:
+    name: RAW.JAFFLE_SHOP
+    description: null
+    author: brendan@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-12-01 18:29:21'
+    tables:
+    - name: STG_CUSTOMERS
+      schema:
+        providerType: snowflake
+        fields:
+        - name: CUSTOMER_ID
+          dataType:
+            type: Number
+        - name: FIRST_NAME
+          dataType:
+            type: String
+        - name: LAST_NAME
+          dataType:
+            type: String
+      description: null
+      author: brendan@prophecy.io
+      createdAt: '2023-12-01 18:29:21'
+    - name: RAW_PAYMENTS
+      schema:
+        providerType: snowflake
+        fields:
+        - name: ID
+          dataType:
+            type: Number
+        - name: ORDER_ID
+          dataType:
+            type: Number
+        - name: PAYMENT_METHOD
+          dataType:
+            type: String
+        - name: AMOUNT
+          dataType:
+            type: Number
+      description: null
+      author: brendan@prophecy.io
+      createdAt: '2023-12-01 18:29:23'
+  .prophecy/metadata/sqlsources/Snowflake:
+    name: Snowflake
+    description: null
+    author: brendan@prophecy.io
+    files:
+    - prophecy-sources/Snowflake.yml
+    createdAt: '2023-11-02 17:41:59'
+    tables: []
+  .prophecy/metadata/sqlsources/SF_TUTS_PUBLIC:
+    name: SF_TUTS.PUBLIC
+    description: null
+    author: brendan@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-11-02 17:41:59'
+    tables:
+    - name: EMP_BASIC
+      schema:
+        providerType: snowflake
+        fields:
+        - name: FIRST_NAME
+          dataType:
+            type: String
+        - name: LAST_NAME
+          dataType:
+            type: String
+        - name: EMAIL
+          dataType:
+            type: String
+        - name: STREETADDRESS
+          dataType:
+            type: String
+        - name: CITY
+          dataType:
+            type: String
+        - name: START_DATE
+          dataType:
+            type: Date
+      description: null
+      author: brendan@prophecy.io
+      createdAt: '2023-11-02 17:41:59'
+    - name: SALES
+      schema:
+        providerType: snowflake
+        fields:
+        - name: MONTH
+          dataType:
+            type: String
+        - name: SALES
+          dataType:
+            type: Float
+      description: null
+      author: brendan@prophecy.io
+      createdAt: '2023-11-02 17:41:59'
+  .prophecy/metadata/sqlsources/DEV_RETAIL_PRICING:
+    name: DEV_RETAIL.PRICING
+    description: null
+    author: brendan@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-11-02 17:41:59'
+    tables:
+    - name: ORDERSHIPMENTS
+      schema:
+        providerType: snowflake
+        fields:
+        - name: ORDERKEY
+          dataType:
+            type: Number
+        - name: PARTKEY
+          dataType:
+            type: Number
+        - name: SUPPKEY
+          dataType:
+            type: Number
+        - name: LINENUMBER
+          dataType:
+            type: Number
+        - name: QUANTITY
+          dataType:
+            type: Number
+        - name: EXTENDEDPRICE
+          dataType:
+            type: Number
+        - name: DISCOUNT
+          dataType:
+            type: Number
+        - name: TAX
+          dataType:
+            type: Number
+        - name: RETURNFLAG
+          dataType:
+            type: String
+        - name: DELIVERYSTATUS
+          dataType:
+            type: String
+        - name: SHIPDATE
+          dataType:
+            type: Date
+        - name: COMMITDATE
+          dataType:
+            type: Date
+        - name: RECEIPTDATE
+          dataType:
+            type: Date
+        - name: SHIPINSTRUCT
+          dataType:
+            type: String
+        - name: SHIPMODE
+          dataType:
+            type: String
+        - name: COMMENT
+          dataType:
+            type: String
+      description: null
+      author: brendan@prophecy.io
+      createdAt: '2023-11-02 17:41:59'
+  .prophecy/metadata/sqlsources/RedShiftDev:
+    name: RedShiftDev
+    description: null
+    author: brendan@prophecy.io
+    files:
+    - models/RedShiftDev.yml
+    createdAt: '2023-11-02 17:41:59'
+    tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline

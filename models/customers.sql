@@ -16,6 +16,7 @@ payments AS (
 
 customer_payments AS (
 
+  {#This gem provides a detailed view of customer payment transactions, allowing businesses to track individual payments made by customers for specific orders. By joining the payments and orders tables on the order_id identifier, businesses can gain insights into payment behavior, identify payment discrepancies, and improve payment processing efficiency.#}
   SELECT 
     orders.customer_id AS customer_id,
     amount
@@ -28,6 +29,7 @@ customer_payments AS (
 
 amount_per_customer AS (
 
+  {#This gem provides a summary of the total payment amounts for each customer, allowing businesses to analyze customer payment behavior, track revenue generated from different customers, segment customers based on payment amounts, and evaluate payment performance. By summarizing the payment history at the customer level, businesses can make informed decisions, implement targeted strategies, and optimize their operations to maximize revenue and customer satisfaction.#}
   SELECT 
     customer_id,
     sum(amount) AS total_amount
@@ -62,6 +64,7 @@ customers AS (
 
 customer_report AS (
 
+  {#This gem provides a comprehensive report on customer behavior, including customer demographics, order history, and customer lifetime value (CLV). By merging customer information with order history and payment data, businesses can gain a holistic view of customer behavior, enabling them to make data-driven decisions related to customer retention, targeted marketing strategies, and overall business growth. The report includes customer ID, name, first and most recent order dates, total number of orders, and customer lifetime value.#}
   SELECT 
     customers.customer_id,
     customers.first_name,

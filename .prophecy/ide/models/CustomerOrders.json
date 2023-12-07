@@ -5,7 +5,841 @@
     "autoLayout" : false,
     "staleState" : "none",
     "sourceSuggestions" : {
-      "sources" : [ ]
+      "sources" : [ {
+        "source" : {
+          "table" : {
+            "name" : "CUSTOMERS",
+            "sourceName" : "RAW.JAFFLE_SHOP",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "CUSTOMERS",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+            "conditions" : [ {
+              "alias" : "CUSTOMERS",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = CUSTOMERS.CUSTOMER_ID AND STG_CUSTOMERS.FIRST_NAME = CUSTOMERS.FIRST_NAME AND STG_CUSTOMERS.LAST_NAME = CUSTOMERS.LAST_NAME"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "CUSTOMERS.FIRST_ORDER"
+              },
+              "alias" : "FIRST_ORDER"
+            }, {
+              "expression" : {
+                "expression" : "CUSTOMERS.MOST_RECENT_ORDER"
+              },
+              "alias" : "MOST_RECENT_ORDER"
+            }, {
+              "expression" : {
+                "expression" : "CUSTOMERS.TOTAL_ORDERS"
+              },
+              "alias" : "TOTAL_ORDERS"
+            }, {
+              "expression" : {
+                "expression" : "CUSTOMERS.CUSTOMER_LIFETIME_VALUE"
+              },
+              "alias" : "CUSTOMER_LIFETIME_VALUE"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "CUSTOMERS"
+          },
+          "joinColumns" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "CUSTOMERS_DUMP",
+            "sourceName" : "RAW.JAFFLE_SHOP",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "CUSTOMERS_DUMP",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+            "conditions" : [ {
+              "alias" : "CUSTOMERS_DUMP",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = CUSTOMERS_DUMP.CUSTOMER_ID AND STG_CUSTOMERS.FIRST_NAME = CUSTOMERS_DUMP.FIRST_NAME AND STG_CUSTOMERS.LAST_NAME = CUSTOMERS_DUMP.LAST_NAME"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "CUSTOMERS_DUMP.FIRST_ORDER"
+              },
+              "alias" : "FIRST_ORDER"
+            }, {
+              "expression" : {
+                "expression" : "CUSTOMERS_DUMP.MOST_RECENT_ORDER"
+              },
+              "alias" : "MOST_RECENT_ORDER"
+            }, {
+              "expression" : {
+                "expression" : "CUSTOMERS_DUMP.TOTAL_ORDERS"
+              },
+              "alias" : "TOTAL_ORDERS"
+            }, {
+              "expression" : {
+                "expression" : "CUSTOMERS_DUMP.CUSTOMER_LIFETIME_VALUE"
+              },
+              "alias" : "CUSTOMER_LIFETIME_VALUE"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "CUSTOMERS_DUMP"
+          },
+          "joinColumns" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "ORDERS",
+            "sourceName" : "RAW.JAFFLE_SHOP",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "ORDERS",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID" ],
+            "conditions" : [ {
+              "alias" : "ORDERS",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = ORDERS.CUSTOMER_ID"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "ORDERS.ORDER_ID"
+              },
+              "alias" : "ORDER_ID"
+            }, {
+              "expression" : {
+                "expression" : "ORDERS.ORDER_DATE"
+              },
+              "alias" : "ORDER_DATE"
+            }, {
+              "expression" : {
+                "expression" : "ORDERS.STATUS"
+              },
+              "alias" : "STATUS"
+            }, {
+              "expression" : {
+                "expression" : "ORDERS.CREDIT_CARD_AMOUNT"
+              },
+              "alias" : "CREDIT_CARD_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "ORDERS.COUPON_AMOUNT"
+              },
+              "alias" : "COUPON_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "ORDERS.BANK_TRANSFER_AMOUNT"
+              },
+              "alias" : "BANK_TRANSFER_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "ORDERS.GIFT_CARD_AMOUNT"
+              },
+              "alias" : "GIFT_CARD_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "ORDERS.AMOUNT"
+              },
+              "alias" : "AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "ORDERS"
+          },
+          "joinColumns" : [ "CUSTOMER_ID" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "RAW_CUSTOMERS",
+            "sourceName" : "RAW.JAFFLE_SHOP",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "RAW_CUSTOMERS",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "FIRST_NAME", "LAST_NAME" ],
+            "conditions" : [ {
+              "alias" : "RAW_CUSTOMERS",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME = RAW_CUSTOMERS.FIRST_NAME AND STG_CUSTOMERS.LAST_NAME = RAW_CUSTOMERS.LAST_NAME"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "RAW_CUSTOMERS.ID"
+              },
+              "alias" : "ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "RAW_CUSTOMERS"
+          },
+          "joinColumns" : [ "FIRST_NAME", "LAST_NAME" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "STG_ORDERS",
+            "sourceName" : "RAW.JAFFLE_SHOP",
+            "sourceType" : "ExternalSource"
+          }
+        },
+        "sourceComponentKind" : "ExternalSource",
+        "sourceLabel" : "STG_ORDERS",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID" ],
+            "conditions" : [ {
+              "alias" : "STG_ORDERS",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = STG_ORDERS.CUSTOMER_ID"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "STG_ORDERS.ORDER_ID"
+              },
+              "alias" : "ORDER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_ORDERS.ORDER_DATE"
+              },
+              "alias" : "ORDER_DATE"
+            }, {
+              "expression" : {
+                "expression" : "STG_ORDERS.STATUS"
+              },
+              "alias" : "STATUS"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "STG_ORDERS"
+          },
+          "joinColumns" : [ "CUSTOMER_ID" ],
+          "isRecommended" : true
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "CustomerOrders",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "CustomerOrders_1",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+            "conditions" : [ {
+              "alias" : "CustomerOrders_1",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = CustomerOrders_1.CUSTOMER_ID AND STG_CUSTOMERS.FIRST_NAME = CustomerOrders_1.FIRST_NAME AND STG_CUSTOMERS.LAST_NAME = CustomerOrders_1.LAST_NAME"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "CustomerOrders_1.CNT_ORDERS"
+              },
+              "alias" : "CNT_ORDERS"
+            }, {
+              "expression" : {
+                "expression" : "CustomerOrders_1.STATUS"
+              },
+              "alias" : "STATUS"
+            }, {
+              "expression" : {
+                "expression" : "CustomerOrders_1.CUSTOMER_LIFETIME_VALUE"
+              },
+              "alias" : "CUSTOMER_LIFETIME_VALUE"
+            }, {
+              "expression" : {
+                "expression" : "CustomerOrders_1.TOTAL_PURCHASE_HISTORY"
+              },
+              "alias" : "TOTAL_PURCHASE_HISTORY"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "CustomerOrders_1"
+          },
+          "joinColumns" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "TestBR",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "TestBR",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "FIRST_NAME", "LAST_NAME" ],
+            "conditions" : [ {
+              "alias" : "TestBR",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME = TestBR.FIRST_NAME AND STG_CUSTOMERS.LAST_NAME = TestBR.LAST_NAME"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "TestBR.ORDER_DATE"
+              },
+              "alias" : "ORDER_DATE"
+            }, {
+              "expression" : {
+                "expression" : "TestBR.STATUS"
+              },
+              "alias" : "STATUS"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "TestBR"
+          },
+          "joinColumns" : [ "FIRST_NAME", "LAST_NAME" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "TestK",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "TestK",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID" ],
+            "conditions" : [ {
+              "alias" : "TestK",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = TestK.CUSTOMER_ID"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "TestK.ORDER_ID"
+              },
+              "alias" : "ORDER_ID"
+            }, {
+              "expression" : {
+                "expression" : "TestK.ORDER_DATE"
+              },
+              "alias" : "ORDER_DATE"
+            }, {
+              "expression" : {
+                "expression" : "TestK.STATUS"
+              },
+              "alias" : "STATUS"
+            }, {
+              "expression" : {
+                "expression" : "TestK.CREDIT_CARD_AMOUNT"
+              },
+              "alias" : "CREDIT_CARD_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "TestK.COUPON_AMOUNT"
+              },
+              "alias" : "COUPON_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "TestK.BANK_TRANSFER_AMOUNT"
+              },
+              "alias" : "BANK_TRANSFER_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "TestK.GIFT_CARD_AMOUNT"
+              },
+              "alias" : "GIFT_CARD_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "TestK.AMOUNT"
+              },
+              "alias" : "AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "TestK.ID"
+              },
+              "alias" : "ID"
+            }, {
+              "expression" : {
+                "expression" : "TestK.USER_ID"
+              },
+              "alias" : "USER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "TestK"
+          },
+          "joinColumns" : [ "CUSTOMER_ID" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "customers",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "customers_1",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+            "conditions" : [ {
+              "alias" : "customers_1",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = customers_1.CUSTOMER_ID AND STG_CUSTOMERS.FIRST_NAME = customers_1.FIRST_NAME AND STG_CUSTOMERS.LAST_NAME = customers_1.LAST_NAME"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "customers_1.FIRST_ORDER"
+              },
+              "alias" : "FIRST_ORDER"
+            }, {
+              "expression" : {
+                "expression" : "customers_1.MOST_RECENT_ORDER"
+              },
+              "alias" : "MOST_RECENT_ORDER"
+            }, {
+              "expression" : {
+                "expression" : "customers_1.TOTAL_ORDERS"
+              },
+              "alias" : "TOTAL_ORDERS"
+            }, {
+              "expression" : {
+                "expression" : "customers_1.CUSTOMER_LIFETIME_VALUE"
+              },
+              "alias" : "CUSTOMER_LIFETIME_VALUE"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "customers_1"
+          },
+          "joinColumns" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "orders",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "orders_1",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID" ],
+            "conditions" : [ {
+              "alias" : "orders_1",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = orders_1.CUSTOMER_ID"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "orders_1.ORDER_ID"
+              },
+              "alias" : "ORDER_ID"
+            }, {
+              "expression" : {
+                "expression" : "orders_1.ORDER_DATE"
+              },
+              "alias" : "ORDER_DATE"
+            }, {
+              "expression" : {
+                "expression" : "orders_1.STATUS"
+              },
+              "alias" : "STATUS"
+            }, {
+              "expression" : {
+                "expression" : "orders_1.CREDIT_CARD_AMOUNT"
+              },
+              "alias" : "CREDIT_CARD_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "orders_1.COUPON_AMOUNT"
+              },
+              "alias" : "COUPON_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "orders_1.BANK_TRANSFER_AMOUNT"
+              },
+              "alias" : "BANK_TRANSFER_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "orders_1.GIFT_CARD_AMOUNT"
+              },
+              "alias" : "GIFT_CARD_AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "orders_1.AMOUNT"
+              },
+              "alias" : "AMOUNT"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "orders_1"
+          },
+          "joinColumns" : [ "CUSTOMER_ID" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "raw_customers",
+            "sourceType" : "Seed"
+          }
+        },
+        "sourceComponentKind" : "Seed",
+        "sourceLabel" : "raw_customers",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "FIRST_NAME", "LAST_NAME" ],
+            "conditions" : [ {
+              "alias" : "raw_customers",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME = raw_customers.FIRST_NAME AND STG_CUSTOMERS.LAST_NAME = raw_customers.LAST_NAME"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "raw_customers.id"
+              },
+              "alias" : "id"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.first_name"
+              },
+              "alias" : "first_name"
+            }, {
+              "expression" : {
+                "expression" : "raw_customers.last_name"
+              },
+              "alias" : "last_name"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "raw_customers"
+          },
+          "joinColumns" : [ "FIRST_NAME", "LAST_NAME" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "stg_customers",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "stg_customers",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+            "conditions" : [ {
+              "alias" : "stg_customers",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = stg_customers.CUSTOMER_ID AND STG_CUSTOMERS.FIRST_NAME = stg_customers.FIRST_NAME AND STG_CUSTOMERS.LAST_NAME = stg_customers.LAST_NAME"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "stg_customers"
+          },
+          "joinColumns" : [ "CUSTOMER_ID", "FIRST_NAME", "LAST_NAME" ],
+          "isRecommended" : false
+        } ]
+      }, {
+        "source" : {
+          "table" : {
+            "name" : "stg_orders",
+            "sourceType" : "Model"
+          }
+        },
+        "sourceComponentKind" : "Model",
+        "sourceLabel" : "stg_orders",
+        "canJoinWith" : [ {
+          "processLabel" : "STG_CUSTOMERS",
+          "processId" : "lCiIA2_OBATqK3JwMel6G",
+          "properties" : {
+            "activeTab" : "conditions",
+            "columnsSelector" : [ "CUSTOMER_ID" ],
+            "conditions" : [ {
+              "alias" : "stg_orders",
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID = stg_orders.CUSTOMER_ID"
+              },
+              "joinType" : "inner"
+            } ],
+            "expressions" : [ {
+              "expression" : {
+                "expression" : "stg_orders.ORDER_ID"
+              },
+              "alias" : "ORDER_ID"
+            }, {
+              "expression" : {
+                "expression" : "stg_orders.ORDER_DATE"
+              },
+              "alias" : "ORDER_DATE"
+            }, {
+              "expression" : {
+                "expression" : "stg_orders.STATUS"
+              },
+              "alias" : "STATUS"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.CUSTOMER_ID"
+              },
+              "alias" : "CUSTOMER_ID"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.FIRST_NAME"
+              },
+              "alias" : "FIRST_NAME"
+            }, {
+              "expression" : {
+                "expression" : "STG_CUSTOMERS.LAST_NAME"
+              },
+              "alias" : "LAST_NAME"
+            } ],
+            "headAlias" : "stg_orders"
+          },
+          "joinColumns" : [ "CUSTOMER_ID" ],
+          "isRecommended" : false
+        } ]
+      } ]
     },
     "graphConfig" : {
       "userDefinedConfig" : {
@@ -19,8 +853,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "CustomerOrders",
-        "x" : 420,
-        "y" : -20,
+        "x" : 1060,
+        "y" : 200,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -28,7 +862,7 @@
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM Filter_1\n",
+        "query" : "SELECT * \n\nFROM Filter_on_Status\n",
         "incrementalKey" : false,
         "incremental" : {
           "expression" : "true"
@@ -76,7 +910,7 @@
               }
             } ]
           },
-          "slug" : "Filter_1"
+          "slug" : "Filter_on_Status"
         } ],
         "outputs" : [ {
           "id" : "WJYioo9R",
@@ -129,10 +963,10 @@
       "id" : "slsXoyMVnU6_qU9VlL45r$$BYZPhLa3diBF20vhWVc8t",
       "component" : "Join",
       "metadata" : {
-        "label" : "Join_1",
-        "slug" : "Join_1",
-        "x" : -220,
-        "y" : 40,
+        "label" : "JoinOnIDs",
+        "slug" : "JoinOnIDs",
+        "x" : 320,
+        "y" : 320,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -411,10 +1245,10 @@
       "id" : "q1GxH12K2PFGMSK1CMaHC$$nesEjTgfTt34nFl8Z6qOx",
       "component" : "Aggregate",
       "metadata" : {
-        "label" : "Aggregate_1",
-        "slug" : "Aggregate_1",
-        "x" : -80,
-        "y" : 60,
+        "label" : "GroupOnID",
+        "slug" : "GroupOnID",
+        "x" : 480,
+        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -592,10 +1426,10 @@
       "id" : "ivjvgw2Dlzxv4rTu79gcI$$X5o4ZSGhKHZNh0yPwHrMb",
       "component" : "SQLStatement",
       "metadata" : {
-        "label" : "SQLStatement_1",
-        "slug" : "SQLStatement_1",
-        "x" : -120,
-        "y" : -180,
+        "label" : "SubQueryCount",
+        "slug" : "SubQueryCount",
+        "x" : 360,
+        "y" : 120,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -687,10 +1521,10 @@
       "id" : "Rlq3k-WUHJH8KGfMEKj9U$$8ZwC9QRFlFv5wiYV_UQLU",
       "component" : "Join",
       "metadata" : {
-        "label" : "Join_2",
-        "slug" : "Join_2",
-        "x" : 100,
-        "y" : -20,
+        "label" : "AddCount",
+        "slug" : "AddCount",
+        "x" : 680,
+        "y" : 200,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -851,8 +1685,8 @@
       "metadata" : {
         "label" : "orders",
         "slug" : "orders",
-        "x" : -360,
-        "y" : -100,
+        "x" : 120,
+        "y" : 80,
         "phase" : 0
       },
       "properties" : {
@@ -925,10 +1759,10 @@
       "id" : "Lsko_CyMlJsX7Brnq7Q3P$$VuY6tQh58IjPmakggVGqC",
       "component" : "Filter",
       "metadata" : {
-        "label" : "Filter_1",
-        "slug" : "Filter_1",
-        "x" : 240,
-        "y" : -20,
+        "label" : "Filter_on_Status",
+        "slug" : "Filter_on_Status",
+        "x" : 900,
+        "y" : 200,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -1035,8 +1869,8 @@
       "metadata" : {
         "label" : "customers",
         "slug" : "customers",
-        "x" : -360,
-        "y" : 140,
+        "x" : 120,
+        "y" : 360,
         "phase" : 0
       },
       "properties" : {

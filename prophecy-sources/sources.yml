@@ -1,3 +1,124 @@
 ---
 version: 2
-sources: []
+sources:
+- name: "DEV_RETAIL.PRICING"
+  database: "DEV_RETAIL"
+  schema: "PRICING"
+  config:
+    enabled: true
+  tables:
+  - name: "ORDERSHIPMENTS"
+    columns:
+    - name: "ORDERKEY"
+      dataType:
+        type: "Number"
+    - name: "PARTKEY"
+      dataType:
+        type: "Number"
+    - name: "SUPPKEY"
+      dataType:
+        type: "Number"
+    - name: "LINENUMBER"
+      dataType:
+        type: "Number"
+    - name: "QUANTITY"
+      dataType:
+        type: "Number"
+    - name: "EXTENDEDPRICE"
+      dataType:
+        type: "Number"
+    - name: "DISCOUNT"
+      dataType:
+        type: "Number"
+    - name: "TAX"
+      dataType:
+        type: "Number"
+    - name: "RETURNFLAG"
+      dataType:
+        type: "String"
+    - name: "DELIVERYSTATUS"
+      dataType:
+        type: "String"
+    - name: "SHIPDATE"
+      dataType:
+        type: "Date"
+    - name: "COMMITDATE"
+      dataType:
+        type: "Date"
+    - name: "RECEIPTDATE"
+      dataType:
+        type: "Date"
+    - name: "SHIPINSTRUCT"
+      dataType:
+        type: "String"
+    - name: "SHIPMODE"
+      dataType:
+        type: "String"
+    - name: "COMMENT"
+      dataType:
+        type: "String"
+- name: "SF_TUTS.PUBLIC"
+  database: "SF_TUTS"
+  schema: "PUBLIC"
+  config:
+    enabled: true
+  tables:
+  - name: "EMP_BASIC"
+    columns:
+    - name: "FIRST_NAME"
+      dataType:
+        type: "String"
+    - name: "LAST_NAME"
+      dataType:
+        type: "String"
+    - name: "EMAIL"
+      dataType:
+        type: "String"
+    - name: "STREETADDRESS"
+      dataType:
+        type: "String"
+    - name: "CITY"
+      dataType:
+        type: "String"
+    - name: "START_DATE"
+      dataType:
+        type: "Date"
+  - name: "SALES"
+    columns:
+    - name: "MONTH"
+      dataType:
+        type: "String"
+    - name: "SALES"
+      dataType:
+        type: "Float"
+- name: "RAW.JAFFLE_SHOP"
+  database: "RAW"
+  schema: "JAFFLE_SHOP"
+  config:
+    enabled: true
+  tables:
+  - name: "STG_CUSTOMERS"
+    columns:
+    - name: "CUSTOMER_ID"
+      dataType:
+        type: "Number"
+    - name: "FIRST_NAME"
+      dataType:
+        type: "String"
+    - name: "LAST_NAME"
+      dataType:
+        type: "String"
+  - name: "RAW_PAYMENTS"
+    columns:
+    - name: "ID"
+      dataType:
+        type: "Number"
+    - name: "ORDER_ID"
+      dataType:
+        type: "Number"
+    - name: "PAYMENT_METHOD"
+      dataType:
+        type: "String"
+    - name: "AMOUNT"
+      dataType:
+        type: "Number"
